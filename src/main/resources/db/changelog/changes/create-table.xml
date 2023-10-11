@@ -6,7 +6,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-  <changeSet id="1" author="admin">
+  <changeSet id="11" author="iya">
     <createTable tableName="role">
       <column name="id" type="int">
         <constraints primaryKey="true"/>
@@ -19,7 +19,7 @@
     </rollback>
   </changeSet>
 
-  <changeSet id="2" author="admin">
+  <changeSet id="22" author="iya">
     <createTable tableName="users">
       <column name="id" type="int">
         <constraints primaryKey="true"/>
@@ -34,11 +34,11 @@
       </column>
     </createTable>
     <rollback>
-      <dropTable tableName="user"/>
+      <dropTable tableName="users"/>
     </rollback>
   </changeSet>
 
-  <changeSet id="3" author="admin">
+  <changeSet id="33" author="iya">
     <createTable tableName="user_role">
       <column name="id" type="int">
       </column>
@@ -50,7 +50,7 @@
     </rollback>
   </changeSet>
 
-  <changeSet id="4" author="admin">
+  <changeSet id="44" author="iya">
     <addForeignKeyConstraint baseColumnNames="id"
       baseTableName="user_role"
       constraintName="user"
@@ -58,7 +58,7 @@
       referencedTableName="users"/>
   </changeSet>
 
-  <changeSet id="5" author="admin">
+  <changeSet id="55" author="iya">
     <addForeignKeyConstraint baseColumnNames="role"
       baseTableName="user_role"
       constraintName="role"
