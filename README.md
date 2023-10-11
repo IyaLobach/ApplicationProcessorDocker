@@ -135,20 +135,20 @@ https://localhost:5050
 #### 2. Введите логин admin@admin.com и пароль root
 
 ![pgAdmin login]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin login.png)
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pglogin.png)
 
 #### 3. Создайте сервер с любым именем и выполните следующее подключение:
 
 ![pgAdmin new Server]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin newServer.png) 
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
 
 ![pgAdmin new Server]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin newServer connection.png) 
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgconnection.png) 
 
 #### 4. Теперь Вам доступны созданные таблицы и записи.
 
 ![Database ER]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin tables.png)
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgtables.png)
 
 
 
@@ -192,6 +192,8 @@ GET https://localhost:8081/api/users/applications
 
 В качестве обязятельного параметра указать page, который указвает номер страницы для пагинации
 
+![Applications]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applications.png)
 
 2. Для создания новой заявки необходимо отправить
 
@@ -199,11 +201,14 @@ POST https://localhost:8081/api/users/applications
 
 В качестве тела запроса отправить JSON вида:
 
-{
+`{
 
 	"text": "your_text"
 	
-}
+}`
+
+![Create]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationCreate.png)
 
 3. Для отправки заявки необходимо отправить
 
@@ -211,17 +216,23 @@ PATCH https://localhost:8081/api/users/applications/{applicationId}/submit
 
 Тело запроса оставить пустым
 
+![Submit]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationSubmit.png)
+
 4. Для редактирования заявки необходимо отправить
 
 PATCH https://localhost:8081/api/users/applications/{applicationId}/edit
 
 В качестве тела запроса отправить JSON вида:
 
-{
+`{
 
 	"text": "your_text"
 
-}
+}`
+
+![Edit]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationEdit.png)
 
 #### Оператор (ROLE_OPERATOR)
 
@@ -233,17 +244,26 @@ GET https://localhost:8081/api/operators/applications
 
 Помимо этого можно указать необязательные параметры name и указать имя пользователя и/или sort, которое принимает значение asc или desc для сортироваки заявок по времени по возрастанию и убыванию соответственно
 
+![Applications]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorShow.png)
+
 2. Для принятия заявки необходимо отправить
 
 PATCH https://localhost:8081/api/operators/applications/{applicationId}/accept
 
 Тело запроса оставить пустым.
 
+![Accept]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorAccept.png)
+
 3. Для отклонения заявки необходимо отправить
 
 PATCH https://localhost:8081/api/operators/applications/{applicationId}/reject
 
 Тело запроса оставить пустым.
+
+![Reject]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorReject.png)
 
 #### Администратор (ROLE_ADMIN)
 1. Для просмотра пользователей необходимо отправить
@@ -252,8 +272,19 @@ GET https://localhost:8081/api/admins/users
 
 В качестве необязятельного параметра указать name для поиска заявок у конкретного пользователя
 
+![Show]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow.png)
+
+
+
 2. Для назначения прав необходимо отправить
 
 PATCH https://localhost:8081/api/admins/users/{userId}/appoint
 
 Тело запроса оставить пустым.
+
+![Appoint]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminAppoint.png)
+
+![Show]
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow2.png)

@@ -14,7 +14,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/postgres
 
   service-db:
-    image: postgres:14.7-alpine
+    image: postgres:14
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345678

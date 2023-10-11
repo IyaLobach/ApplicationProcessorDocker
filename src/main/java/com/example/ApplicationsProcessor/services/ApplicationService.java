@@ -29,10 +29,10 @@ public class ApplicationService {
 
   @Transactional
   public void create(Application application, User creator) {
-    application.setId(application.getId());
     application.setUser(creator);
     application.setStatus(Status.DRAFT);
     application.setDate(new Date());
+    application.setText(application.getText());
     creator.addApplication(application);
     applicationRepository.save(application);
   }
