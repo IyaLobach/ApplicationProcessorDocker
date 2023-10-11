@@ -48,7 +48,7 @@
       <column name="id" type="int">
         <constraints primaryKey="true"/>
       </column>
-      <column name="user" type="int">
+      <column name="users" type="int">
         <constraints nullable="false"/>
       </column>
       <column name="text" type="varchar(255)">
@@ -67,11 +67,11 @@
   </changeSet>
 
   <changeSet id="4" author="admin">
-    <addForeignKeyConstraint baseColumnNames="user"
+    <addForeignKeyConstraint baseColumnNames="users"
       baseTableName="application"
       referencedColumnNames="id"
       referencedTableName="users"
-      constraintName="user"/>
+      constraintName="users"/>
   </changeSet>
 
   <changeSet id="5" author="admin">

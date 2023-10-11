@@ -104,14 +104,14 @@
 
 #### 1. Клонируйте репозиторий:
 
-git clone https://github.com/IyaLobach/ApplicationProcessorDocker.git
+'git clone https://github.com/IyaLobach/ApplicationProcessorDocker.git'
 
 #### 2. Убедитесь в том, что у вас установлен Docker командой:
-docker
+'docker'
 
 #### 3. Запустите docker-compose командой, перейдя в нужную директорию:
 
-docker-compose up
+'docker-compose up'
 
 ## Просмотр базы данных
 
@@ -156,8 +156,9 @@ https://localhost:8082/api/login
 #### Для разлогинивания необходимо перейти по адресу:
 https://localhost:8082/api/logout
 
-## Доступные операции
+### Доступные операции
 #### Пользователь (ROLE_USER)
+
 1. Для просмотра заявков, созданных пользователем необходимо отправить
 
 GET https://localhost:8082/api/users/applications
@@ -196,6 +197,7 @@ PATCH https://localhost:8082/api/users/applications/{applicationId}/edit
 }
 
 #### Оператор (ROLE_OPERATOR)
+
 1. Для просмотра заявков, созданных пользователем необходимо отправить
 
 GET https://localhost:8082/api/operators/applications
