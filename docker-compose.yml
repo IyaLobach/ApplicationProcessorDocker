@@ -6,11 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8082:8081"
+      - "8081:8081"
     depends_on:
       - service-db
     environment:
-      - SERVER_PORT=8082
+      - SERVER_PORT=8081
       - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/postgres
 
   service-db:
