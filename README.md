@@ -110,6 +110,8 @@
 
 5. PostgreSQL
 
+6. Liquibase
+
 
 ## Запуск проекта с помощью Docker-compose
 
@@ -118,6 +120,7 @@
 `git clone https://github.com/IyaLobach/ApplicationProcessorDocker.git`
 
 #### 2. Убедитесь в том, что у вас установлен Docker командой:
+
 `docker`
 
 #### 3. Запустите docker-compose командой, перейдя в нужную директорию:
@@ -126,7 +129,7 @@
 
 ## Просмотр базы данных
 
-В проекте используется база данных postgreSQL, где предварительно будут созданы все необходимые таблицы и записи в них.
+В проекте используется база данных postgreSQL, где предварительно создаются все необходимые таблицы и записи в них.
 
 #### 1. Таблицы можно посмотреть, передя по адресу:
 
@@ -134,35 +137,31 @@ https://localhost:5050
 
 #### 2. Введите логин admin@admin.com и пароль root
 
-![pgAdmin login]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pglogin.png)
+![pgAdmin login](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pglogin.png)
 
-#### 3. Создайте сервер с любым именем и выполните следующее подключение:
+#### 3. Создайте сервер с любым именем, в качестве укажите service-db, пользователь postgres и пароль 12345678, а затем выполните следующее подключение:
 
-![pgAdmin new Server]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
+![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
 
-![pgAdmin new Server]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgconnection.png) 
+![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgconnection.png) 
 
-#### 4. Теперь Вам доступны созданные таблицы и записи.
+#### 4. Теперь Вам доступны созданные таблицы и записи
 
-![Database ER]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgtables.png)
+![Tables](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgtables.png)
 
 
 
 ### Связи между таблицами
+
 #### ER-диаграмма, отражающая связь таблиц имеет вид:
 
-![Database ER]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/er.png)
+![Database ER](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/er.png)
 
 ## Тестирование сервиса
 
 #### Для работы с сервисом можно использовать, например, Postman. 
 
-Для обращения необходимо указать адрес:
+Для обращения к сервису необходимо указать адрес:
 
 https://localhost:8081/api
 
@@ -170,7 +169,7 @@ https://localhost:8081/api
 
 https://localhost:8081/api/login
 
-#### В базу данных предваритель были внесены данные о следующих пользователях:
+#### В базу данных предварительно были внесены данные о следующих пользователях:
 1. login: iya@mail.ru password: 1234 ROLE_USER
 2. login: petr@mail.ru password: 4567 ROLE_USER
 3. login: anita@mail.ru password: 8910 ROLE_USER
@@ -186,16 +185,15 @@ https://localhost:8082/api/logout
 
 #### Пользователь (ROLE_USER)
 
-1. Для просмотра заявков, созданных пользователем необходимо отправить
+1. Для просмотра заявков, созданных пользователем необходимо отправить запрос
 
 GET https://localhost:8081/api/users/applications
 
-В качестве обязятельного параметра указать page, который указвает номер страницы для пагинации
+В качестве обязательного параметра указать page в качестве номера страницы для пагинации
 
-![Applications]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applications.png)
+![Applications](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applications.png)
 
-2. Для создания новой заявки необходимо отправить
+2. Для создания новой заявки необходимо отправить запрос
 
 POST https://localhost:8081/api/users/applications
 
@@ -207,19 +205,17 @@ POST https://localhost:8081/api/users/applications
 	
 }`
 
-![Create]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationCreate.png)
+![Create](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationCreate.png)
 
-3. Для отправки заявки необходимо отправить
+3. Для отправки заявки необходимо отправить запрос
 
 PATCH https://localhost:8081/api/users/applications/{applicationId}/submit
 
 Тело запроса оставить пустым
 
-![Submit]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationSubmit.png)
+![Submit](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationSubmit.png)
 
-4. Для редактирования заявки необходимо отправить
+4. Для редактирования заявки необходимо отправить запрос
 
 PATCH https://localhost:8081/api/users/applications/{applicationId}/edit
 
@@ -231,60 +227,54 @@ PATCH https://localhost:8081/api/users/applications/{applicationId}/edit
 
 }`
 
-![Edit]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationEdit.png)
+![Edit](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/applicationEdit.png)
 
 #### Оператор (ROLE_OPERATOR)
 
-1. Для просмотра заявков, созданных пользователем необходимо отправить
+1. Для просмотра заявков, созданных пользователем необходимо отправить запрос
 
 GET https://localhost:8081/api/operators/applications
 
-В качестве обязятельного параметра указать page, который указвает номер страницы для пагинации.
+В качестве обязятельного параметра указать page в качестве номера страницы для пагинации.
 
-Помимо этого можно указать необязательные параметры name и указать имя пользователя и/или sort, которое принимает значение asc или desc для сортироваки заявок по времени по возрастанию и убыванию соответственно
+Помимо этого можно указать необязательные параметры name в качестве имени пользователя и/или sort, которое принимает значение asc или desc для сортироваки заявок по времени по возрастанию и убыванию соответственно.
 
-![Applications]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorShow.png)
+![Applications](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorShow.png)
 
-2. Для принятия заявки необходимо отправить
+2. Для принятия заявки необходимо отправить запрос
 
 PATCH https://localhost:8081/api/operators/applications/{applicationId}/accept
 
 Тело запроса оставить пустым.
 
-![Accept]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorAccept.png)
+![Accept](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorAccept.png)
 
-3. Для отклонения заявки необходимо отправить
+3. Для отклонения заявки необходимо отправить запрос
 
 PATCH https://localhost:8081/api/operators/applications/{applicationId}/reject
 
 Тело запроса оставить пустым.
 
-![Reject]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorReject.png)
+![Reject](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/operatorReject.png)
 
 #### Администратор (ROLE_ADMIN)
-1. Для просмотра пользователей необходимо отправить
+
+1. Для просмотра пользователей необходимо отправить запрос
 
 GET https://localhost:8081/api/admins/users
 
 В качестве необязятельного параметра указать name для поиска заявок у конкретного пользователя
 
-![Show]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow.png)
+![Show](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow.png)
 
 
 
-2. Для назначения прав необходимо отправить
+2. Для назначения прав необходимо отправить запрос
 
 PATCH https://localhost:8081/api/admins/users/{userId}/appoint
 
 Тело запроса оставить пустым.
 
-![Appoint]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminAppoint.png)
+![Appoint](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminAppoint.png)
 
-![Show]
-(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow2.png)
+![Show](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/adminShow2.png)
