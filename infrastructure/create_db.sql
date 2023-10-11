@@ -1,1 +1,0 @@
-create database application_processor;
