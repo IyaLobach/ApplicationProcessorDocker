@@ -12,7 +12,6 @@
         <constraints primaryKey="true"/>
       </column>
       <column name="role" type="varchar(20)">
-        <constraints nullable="false"/>
       </column>
     </createTable>
     <rollback>
@@ -26,16 +25,12 @@
         <constraints primaryKey="true"/>
       </column>
       <column name="name" type="varchar(30)">
-        <constraints nullable="false"/>
       </column>
       <column name="surname" type="varchar(30)">
-        <constraints nullable="false"/>
       </column>
       <column name="password" type="varchar(255)">
-        <constraints nullable="false"/>
       </column>
       <column name="email" type="varchar(30)">
-        <constraints nullable="false"/>
       </column>
     </createTable>
     <rollback>
@@ -44,43 +39,10 @@
   </changeSet>
 
   <changeSet id="3" author="admin">
-    <createTable tableName="application">
-      <column name="id" type="int">
-        <constraints primaryKey="true"/>
-      </column>
-      <column name="users" type="int">
-        <constraints nullable="false"/>
-      </column>
-      <column name="text" type="varchar(255)">
-        <constraints nullable="false"/>
-      </column>
-      <column name="status" type="varchar(20)">
-        <constraints nullable="false"/>
-      </column>
-      <column name="date" type="timestamp">
-        <constraints nullable="false"/>
-      </column>
-    </createTable>
-    <rollback>
-      <dropTable tableName="application"/>
-    </rollback>
-  </changeSet>
-
-  <changeSet id="4" author="admin">
-    <addForeignKeyConstraint baseColumnNames="users"
-      baseTableName="application"
-      referencedColumnNames="id"
-      referencedTableName="users"
-      constraintName="users"/>
-  </changeSet>
-
-  <changeSet id="5" author="admin">
     <createTable tableName="user_role">
       <column name="id" type="int">
-        <constraints nullable="false"/>
       </column>
       <column name="role" type="int">
-        <constraints nullable="false"/>
       </column>
     </createTable>
     <rollback>
@@ -88,7 +50,7 @@
     </rollback>
   </changeSet>
 
-  <changeSet id="6" author="admin">
+  <changeSet id="4" author="admin">
     <addForeignKeyConstraint baseColumnNames="id"
       baseTableName="user_role"
       constraintName="user"
@@ -96,7 +58,7 @@
       referencedTableName="users"/>
   </changeSet>
 
-  <changeSet id="7" author="admin">
+  <changeSet id="5" author="admin">
     <addForeignKeyConstraint baseColumnNames="role"
       baseTableName="user_role"
       constraintName="role"
