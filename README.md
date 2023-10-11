@@ -115,14 +115,14 @@
 
 #### 1. Клонируйте репозиторий:
 
-'git clone https://github.com/IyaLobach/ApplicationProcessorDocker.git'
+`git clone https://github.com/IyaLobach/ApplicationProcessorDocker.git`
 
 #### 2. Убедитесь в том, что у вас установлен Docker командой:
-'docker'
+`docker`
 
 #### 3. Запустите docker-compose командой, перейдя в нужную директорию:
 
-'docker-compose up'
+`docker-compose up`
 
 ## Просмотр базы данных
 
@@ -134,14 +134,29 @@ https://localhost:5050
 
 #### 2. Введите логин admin@admin.com и пароль root
 
-#### 3. Создайте сервер с любым именем и выполните следующее подключение: 
+![pgAdmin login]
+(/png/pgAdmin login.png)
+
+#### 3. Создайте сервер с любым именем и выполните следующее подключение:
+
+![pgAdmin new Server]
+(/png/pgAdmin newServer.png) 
+
+![pgAdmin new Server]
+(/png/pgAdmin newServer connection.png) 
 
 #### 4. Теперь Вам доступны созданные таблицы и записи.
+
+![Database ER]
+(/png/pgAdmin tables.png)
+
+
 
 ### Связи между таблицами
 #### ER-диаграмма, отражающая связь таблиц имеет вид:
 
-
+![Database ER]
+(/png/er.png)
 
 ## Тестирование сервиса
 
@@ -149,11 +164,11 @@ https://localhost:5050
 
 Для обращения необходимо указать адрес:
 
-https://localhost:8082/api
+https://localhost:8081/api
 
 #### Все пользователи, взаимодействующие с сервисом должны авторизоваться по адресу
 
-https://localhost:8082/api/login
+https://localhost:8081/api/login
 
 #### В базу данных предваритель были внесены данные о следующих пользователях:
 1. login: iya@mail.ru password: 1234 ROLE_USER
@@ -173,14 +188,14 @@ https://localhost:8082/api/logout
 
 1. Для просмотра заявков, созданных пользователем необходимо отправить
 
-GET https://localhost:8082/api/users/applications
+GET https://localhost:8081/api/users/applications
 
 В качестве обязятельного параметра указать page, который указвает номер страницы для пагинации
 
 
 2. Для создания новой заявки необходимо отправить
 
-POST https://localhost:8082/api/users/applications
+POST https://localhost:8081/api/users/applications
 
 В качестве тела запроса отправить JSON вида:
 
@@ -192,13 +207,13 @@ POST https://localhost:8082/api/users/applications
 
 3. Для отправки заявки необходимо отправить
 
-PATCH https://localhost:8082/api/users/applications/{applicationId}/submit
+PATCH https://localhost:8081/api/users/applications/{applicationId}/submit
 
 Тело запроса оставить пустым
 
 4. Для редактирования заявки необходимо отправить
 
-PATCH https://localhost:8082/api/users/applications/{applicationId}/edit
+PATCH https://localhost:8081/api/users/applications/{applicationId}/edit
 
 В качестве тела запроса отправить JSON вида:
 
@@ -212,7 +227,7 @@ PATCH https://localhost:8082/api/users/applications/{applicationId}/edit
 
 1. Для просмотра заявков, созданных пользователем необходимо отправить
 
-GET https://localhost:8082/api/operators/applications
+GET https://localhost:8081/api/operators/applications
 
 В качестве обязятельного параметра указать page, который указвает номер страницы для пагинации.
 
@@ -220,25 +235,25 @@ GET https://localhost:8082/api/operators/applications
 
 2. Для принятия заявки необходимо отправить
 
-PATCH https://localhost:8082/api/operators/applications/{applicationId}/accept
+PATCH https://localhost:8081/api/operators/applications/{applicationId}/accept
 
 Тело запроса оставить пустым.
 
 3. Для отклонения заявки необходимо отправить
 
-PATCH https://localhost:8082/api/operators/applications/{applicationId}/reject
+PATCH https://localhost:8081/api/operators/applications/{applicationId}/reject
 
 Тело запроса оставить пустым.
 
 #### Администратор (ROLE_ADMIN)
 1. Для просмотра пользователей необходимо отправить
 
-GET https://localhost:8082/api/admins/users
+GET https://localhost:8081/api/admins/users
 
 В качестве необязятельного параметра указать name для поиска заявок у конкретного пользователя
 
 2. Для назначения прав необходимо отправить
 
-PATCH https://localhost:8082/api/admins/users/{userId}/appoint
+PATCH https://localhost:8081/api/admins/users/{userId}/appoint
 
 Тело запроса оставить пустым.
