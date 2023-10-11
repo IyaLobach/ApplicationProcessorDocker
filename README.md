@@ -131,21 +131,22 @@
 
 В проекте используется база данных postgreSQL, где предварительно создаются все необходимые таблицы и записи в них.
 
-#### 1. Таблицы можно посмотреть, передя по адресу:
+#### Таблицы можно посмотреть, передя по адресу:
 
 https://localhost:5050 
 
-#### 2. Введите логин admin@admin.com и пароль root
+Введите логин admin@admin.com и пароль root
 
 ![pgAdmin login](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pglogin.png)
 
-#### 3. Создайте сервер с любым именем, в качестве укажите service-db, пользователь postgres и пароль 12345678, а затем выполните следующее подключение:
-
+Создайте сервер с любым именем
 ![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
+
+В качестве имени сервера укажите service-db, имя postgres и пароль 12345678
 
 ![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgconnection.png) 
 
-#### 4. Теперь Вам доступны созданные таблицы и записи
+Теперь Вам доступны созданные таблицы и записи
 
 ![Tables](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgtables.png)
 
@@ -153,15 +154,15 @@ https://localhost:5050
 
 ### Связи между таблицами
 
-#### ER-диаграмма, отражающая связь таблиц имеет вид:
+ER-диаграмма, отражающая связь таблиц имеет вид:
 
 ![Database ER](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/er.png)
 
 ## Тестирование сервиса
 
-#### Для работы с сервисом можно использовать, например, Postman. 
+Для работы с сервисом можно использовать, например, Postman. 
 
-Для обращения к сервису необходимо указать адрес:
+Обращение к сервису осуществляется по адресу:
 
 https://localhost:8081/api
 
