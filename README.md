@@ -135,20 +135,20 @@ https://localhost:5050
 #### 2. Введите логин admin@admin.com и пароль root
 
 ![pgAdmin login]
-(/png/pgAdmin login.png)
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin login.png)
 
 #### 3. Создайте сервер с любым именем и выполните следующее подключение:
 
 ![pgAdmin new Server]
-(/png/pgAdmin newServer.png) 
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin newServer.png) 
 
 ![pgAdmin new Server]
-(/png/pgAdmin newServer connection.png) 
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin newServer connection.png) 
 
 #### 4. Теперь Вам доступны созданные таблицы и записи.
 
 ![Database ER]
-(/png/pgAdmin tables.png)
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgAdmin tables.png)
 
 
 
@@ -156,7 +156,7 @@ https://localhost:5050
 #### ER-диаграмма, отражающая связь таблиц имеет вид:
 
 ![Database ER]
-(/png/er.png)
+(https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/er.png)
 
 ## Тестирование сервиса
 
