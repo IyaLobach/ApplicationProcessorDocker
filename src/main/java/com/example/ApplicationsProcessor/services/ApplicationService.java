@@ -94,15 +94,15 @@ public class ApplicationService {
   public List<Application> showApplicationByUserId(int userId, int page, String sort) {
     Page<Application> result = null;
     if (sort == null) {
-      result = applicationRepository.findAllByUserId(userId, PageRequest.of(page, 5));
+      result = applicationRepository.findAllByUsersId(userId, PageRequest.of(page, 5));
     } else {
       if (sort.equals("asc")) {
         result = applicationRepository
-            .findByUserId(userId, PageRequest.of(page, 5), Sort.by("date").ascending());
+            .findByUsersId(userId, PageRequest.of(page, 5), Sort.by("date").ascending());
       } else {
         if (sort.equals("desc")) {
           result = applicationRepository
-              .findByUserId(userId, PageRequest.of(page, 5), Sort.by("date").descending());
+              .findByUsersId(userId, PageRequest.of(page, 5), Sort.by("date").descending());
         } else {
           throw new ApplicationException("Сортировка задана неверно");
         }
@@ -140,17 +140,17 @@ public class ApplicationService {
   public List<Application> showApplicationByUserName(String userName, int page, String sort) {
     Page<Application> applications = null;
     if (sort == null) {
-        applications = applicationRepository.findAllByStatusAndUserNameContaining(Status.SUBMITTED, userName, PageRequest.of(page,5));
+        applications = applicationRepository.findAllByStatusAndUsersNameContaining(Status.SUBMITTED, userName, PageRequest.of(page,5));
     } else {
       if (sort.equals("asc")) {
         applications = applicationRepository
-            .findAllByStatusAndUserNameContaining(Status.SUBMITTED, userName,
+            .findAllByStatusAndUsersNameContaining(Status.SUBMITTED, userName,
                 PageRequest.of(page, 5),
                 Sort.by("date").ascending());
       } else {
         if (sort.equals("desc")) {
           applications = applicationRepository
-              .findAllByStatusAndUserNameContaining(Status.SUBMITTED, userName,
+              .findAllByStatusAndUsersNameContaining(Status.SUBMITTED, userName,
                   PageRequest.of(page, 5),
                   Sort.by("date").descending());
         } else {

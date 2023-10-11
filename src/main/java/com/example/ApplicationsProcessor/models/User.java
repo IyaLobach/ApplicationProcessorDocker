@@ -51,7 +51,7 @@ public class User {
   )
   private List<Role> role;
 
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
   private List<Application> applications;
 
   public User() {

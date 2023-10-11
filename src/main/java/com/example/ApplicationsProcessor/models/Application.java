@@ -29,7 +29,8 @@ public class Application {
 
   @ManyToOne
   @JoinColumn(name = "users", referencedColumnName = "id")
-  private User user;
+  private User users;
+
 
   @Column(name = "text")
   private String text;
@@ -54,11 +55,11 @@ public class Application {
   }
 
   public User getUser() {
-    return user;
+    return users;
   }
 
   public void setUser(User user) {
-    this.user = user;
+    this.users = user;
   }
 
   public String getText() {
