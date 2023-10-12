@@ -131,7 +131,7 @@
 
 В проекте используется база данных postgreSQL, где предварительно создаются все необходимые таблицы и записи в них.
 
-#### Таблицы можно посмотреть, передя по адресу:
+#### Таблицы можно посмотреть, перейдя по адресу:
 
 https://localhost:5050 
 
@@ -142,7 +142,7 @@ https://localhost:5050
 Создайте сервер с любым именем
 ![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
 
-В качестве имени сервера укажите service-db, имя postgres и пароль 12345678
+В качестве имени укажите service-db, имя postgres и пароль 12345678
 
 ![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgconnection.png) 
 
