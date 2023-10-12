@@ -52,34 +52,6 @@ public class UserController {
   @Autowired
   private RoleService roleService;
 
-//  @GetMapping()
-//  public void create() {
-//    User user = new User();
-//    user.setName("Ия");
-//    user.setSurname("Лобач");
-//    user.setPassword("1234");
-//    Role role = roleService.findByRoleEnum(RoleEnum.ROLE_USER);
-//    user.addRole(role);
-//    user.setEmail("iya@mail.ru");
-//    userService.save(user);
-//    User user2 = new User();
-//    user2.setName("Петр");
-//    user2.setSurname("Петров");
-//    Role role2 = roleService.findByRoleEnum(RoleEnum.ROLE_USER);
-//    user2.addRole(role2);
-//    user2.setEmail("petr@mail.ru");
-//    user2.setPassword("4567");
-//    userService.save(user2);
-//    User user3 = new User();
-//    user3.setName("Анита");
-//    user3.setSurname("Климова");
-//    user3.setPassword("8910");
-//    Role role3 = roleService.findByRoleEnum(RoleEnum.ROLE_USER);
-//    user3.addRole(role3);
-//    user3.setEmail("anita@mail.ru");
-//    userService.save(user3);
-//  }
-
 
   /**
    * Создание новой заявки

@@ -42,26 +42,6 @@ public class OperatorController {
   @Autowired
   private RoleService roleService;
 
-//  @GetMapping()
-//  public void create(){
-//    User operator = new User();
-//    operator.setName("Иван");
-//    operator.setSurname("Иванов");
-//    Role role = roleService.findByRoleEnum(RoleEnum.ROLE_OPERATOR);
-//    operator.addRole(role);
-//    operator.setEmail("ivan@mail.ru");
-//    operator.setPassword("1357");
-//    userService.save(operator);
-//    User operator2 = new User();
-//    operator2.setName("Анна");
-//    operator2.setSurname("Никитина");
-//    Role role2 = roleService.findByRoleEnum(RoleEnum.ROLE_OPERATOR);
-//    operator2.addRole(role2);
-//    operator2.setEmail("ann@mail.ru");
-//    operator2.setPassword("0246");
-//    userService.save(operator2);
-//  }
-
   /**
    * Принятие заявки = изменение статуса заявки
    */

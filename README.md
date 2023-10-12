@@ -140,6 +140,7 @@ https://localhost:5050
 ![pgAdmin login](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pglogin.png)
 
 Создайте сервер с любым именем
+
 ![pgAdmin new Server](https://github.com/IyaLobach/ApplicationProcessorDocker/blob/master/png/pgnewServer.png) 
 
 В качестве имени укажите service-db, имя postgres и пароль 12345678

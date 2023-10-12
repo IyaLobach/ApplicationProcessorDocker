@@ -44,27 +44,6 @@ public class AdminController {
   @Autowired
   private ModelMapper modelMapper;
 
-//  @GetMapping()
-//  public void create() {
-//    User admin = new User();
-//    admin.setName("Виктория");
-//    admin.setSurname("Повх");
-//    Role role = roleService.findByRoleEnum(RoleEnum.ROLE_ADMIN);
-//    admin.addRole(role);
-//    admin.setEmail("povch@mail.ru");
-//    admin.setPassword("3579");
-//    userService.save(admin);
-//    User admin2 = new User();
-//    admin2.setName("Гера");
-//    admin2.setSurname("Вишневская");
-//    Role role2 = roleService.findByRoleEnum(RoleEnum.ROLE_ADMIN);
-//    admin2.addRole(role2);
-//    admin2.setEmail("gera@mail.ru");
-//    admin2.setPassword("2468");
-//    userService.save(admin2);
-//  }
-
-
   /**
    * Назначение пользователя правами оператора
    */
